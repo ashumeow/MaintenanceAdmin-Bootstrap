@@ -9,6 +9,8 @@
         <title>Responsive Maintenance Admin Dashboard</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/dashboard2.css">
+        <script src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+        <script src="https://www.chartjs.org/samples/latest/utils.js"></script>
         <style>
             canvas {
                 -moz-user-select: none;
@@ -160,6 +162,14 @@
                         </div>
                     </div>
 
+                    <div style="width: 75%;">
+                        <canvas id="canvas"></canvas>
+                        <progress id="animationProgress" max="1" value="0" style="width: 100%"></progress>
+                    </div>
+
+                    <div class="container0">
+                    </div>
+
                 </main>
             </div>
         </div>
@@ -176,6 +186,153 @@
         <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
         <script>
         feather.replace()
+        </script>
+
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+        <!-- Icons -->
+        <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+        <script>
+        feather.replace()
+        </script>
+
+        <!-- Graphs -->
+        <script>
+            // 1
+            var progress = document.getElementById('animationProgress');
+            var config = {
+                type: 'line',
+                data: {
+                    labels: ['12AM', '1AM', '2AM', '3AM', '4AM', '5AM', '6AM', '7AM', '8AM', '9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM','6PM', '7PM', '8PM', '9PM', '10PM', '11PM'],
+                    datasets: [{
+                        label: 'Workload',
+                        fill: false,
+                        borderColor: window.chartColors.blue,
+                        backgroundColor: window.chartColors.blue,
+                        data: [
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor()
+                        ]
+                    }]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: 'Overall Maintenance Works'
+                    },
+                    animation: {
+                        duration: 2000,
+                        onProgress: function(animation) {
+                            progress.value = animation.currentStep / animation.numSteps;
+                        },
+                        onComplete: function() {
+                            window.setTimeout(function() {
+                                progress.value = 0;
+                            }, 2000);
+                        }
+                    }
+                }
+            };
+            // 2
+            function createConfig(position) {
+            return {
+                type: 'line',
+                data: {
+                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                    datasets: [{
+                        label: 'Vehicle Maintenance',
+                        borderColor: window.chartColors.purple,
+                        backgroundColor: window.chartColors.purple,
+                        data: [10, 30, 46, 2, 8, 50, 0, 10, 30, 46, 2, 8],
+                        fill: false,
+                    }, {
+                        label: 'Machineries Repairs',
+                        borderColor: window.chartColors.grey,
+                        backgroundColor: window.chartColors.grey,
+                        data: [7, 49, 46, 13, 25, 30, 22, 7, 49, 46, 13, 25],
+                        fill: false,
+                    }, {
+                        label: 'Electrical Maintenance',
+                        borderColor: window.chartColors.green,
+                        backgroundColor: window.chartColors.green,
+                        data: [4, 32, 21, 18, 23, 35, 10, 4, 32, 21, 18, 23],
+                        fill: false,
+                    }, {
+                        label: 'Site Maintenance',
+                        borderColor: window.chartColors.orange,
+                        backgroundColor: window.chartColors.orange,
+                        data: [32, 27, 26, 27, 38, 40, 36, 32, 27, 26, 27, 38],
+                        fill: false,
+                    }, {
+                        label: 'Others',
+                        borderColor: window.chartColors.yellow,
+                        backgroundColor: window.chartColors.yellow,
+                        data: [18, 55, 40, 30, 35, 21, 40, 18, 55, 40, 30, 35],
+                        fill: false,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    title: {
+                        display: true,
+                        text: 'Maintenance Work Classifiers: ' + position
+                    },
+                    tooltips: {
+                        position: position,
+                        mode: 'index',
+                        intersect: false,
+                    },
+                }
+            };
+        }
+            window.onload = function() {
+                // 1
+                var ctx = document.getElementById('canvas').getContext('2d');
+                window.myLine = new Chart(ctx, config);
+
+            // 2
+            var container0 = document.querySelector('.container0');
+
+            ['nearest'].forEach(function(position) {
+                var div = document.createElement('div');
+
+                var canvas = document.createElement('canvas');
+                div.appendChild(canvas);
+                container0.appendChild(div);
+
+                var ctx = canvas.getContext('2d');
+                var config = createConfig(position);
+                new Chart(ctx, config);
+            });
+            };
         </script>
     </body>
 </html>
