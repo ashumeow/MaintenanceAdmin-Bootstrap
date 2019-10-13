@@ -151,13 +151,125 @@
                 </nav>
         
                 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                        <div class="btn-toolbar mb-2 mb-md-0">
-                            <button class="btn btn-sm btn-outline-secondary">
-                                <span data-feather="calendar"></span> Real-Time View
-                            </button>
-                        </div>
-                    </div>
+
+                    <h2>Submit New Ticket</h2>
+                    <form>
+                      <div class="form-group">
+                        <label for="exampleInputUserID" class="bmd-label-floating">Employee ID</label>
+                        <input type="text" class="form-control" id="exampleInputUserID">
+                        <span class="bmd-help">We'll consider your ticket only if employee ID included</span>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputName" class="bmd-label-floating">Your Name</label>
+                        <input type="text" class="form-control" id="exampleInputName">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleSelect1" class="bmd-label-floating">Issue Priority Level</label>
+                        <select class="form-control" id="exampleSelect1">
+                          <option>Low</option>
+                          <option>Moderate</option>
+                          <option>High</option>
+                        </select>
+                        <span class="bmd-help">Low=its okay to wait for 1-2 days, Moderate=its okay to wait for a day or fix tomorrow, High=Needs to be fixed within few hours</span>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleSelect2" class="bmd-label-floating">Issue Type</label>
+                        <select multiple class="form-control" id="exampleSelect2">
+                          <option>Dashboard (general)</option>
+                          <option>Unable to view data-tables</option>
+                          <option>Reports</option>
+                          <option>Others</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleTextarea" class="bmd-label-floating">Describe Your Request / Issue</label>
+                        <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputFile" class="bmd-label-floating">Attach Image Screenshot (if any)</label>
+                        <input type="file" class="form-control-file" id="exampleInputFile">
+                        <small class="text-muted">Only one file can be uploaded and it must be in .jpg format</small>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                          This issue is only on dashboard. Others are working in my system.
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                          I am not at all sure. Please help.
+                        </label>
+                      </div>
+                      <button class="btn btn-default">Cancel</button>
+                      <button type="submit" class="btn btn-primary btn-raised">Submit</button>
+                    </form>
+
+                    <br>
+                    
+                    <div class="card mb-3">
+                      <div class="card-header">
+                        <i class="fas fa-table"></i>
+                        Active Tickets (from IT Support)</div>
+                      <div class="card-body">
+                        <div class="table-responsive">
+                          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Header</th>
+                                    <th>Header</th>
+                                    <th>Header</th>
+                                    <th>Header</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1,001</td>
+                                    <td>Lorem</td>
+                                    <td>ipsum</td>
+                                    <td>dolor</td>
+                                    <td>sit</td>
+                                </tr>
+                                <tr>
+                                    <td>1,002</td>
+                                    <td>amet</td>
+                                    <td>consectetur</td>
+                                    <td>adipiscing</td>
+                                    <td>elit</td>
+                                </tr>
+                                <tr>
+                                    <td>1,003</td>
+                                    <td>Integer</td>
+                                    <td>nec</td>
+                                    <td>odio</td>
+                                    <td>Praesent</td>
+                                </tr>
+                                <tr>
+                                    <td>1,003</td>
+                                    <td>libero</td>
+                                    <td>Sed</td>
+                                    <td>cursus</td>
+                                    <td>ante</td>
+                                </tr>
+                                <tr>
+                                    <td>1,004</td>
+                                    <td>dapibus</td>
+                                    <td>diam</td>
+                                    <td>Sed</td>
+                                    <td>nisi</td>
+                                </tr>
+                                <tr>
+                                    <td>1,005</td>
+                                    <td>Nulla</td>
+                                    <td>quis</td>
+                                    <td>sem</td>
+                                    <td>at</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div></div></div>
 
                 </main>
             </div>
