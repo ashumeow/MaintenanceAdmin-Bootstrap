@@ -2,5 +2,7 @@ Maintenance Admin Dashboard built using <a href="https://github.com/twbs/bootstr
 
 Taking a group of industries, construction and powerplants / batching systems as a case scenario.
 
+Demo Access : <a href="http://windowsgeekpro.in/modular_system/maintenanceadmin/dashboard.html">Click here!</a>
+
 For Donation : <br>
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/ashumeow)
