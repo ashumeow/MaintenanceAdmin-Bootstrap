@@ -152,13 +152,69 @@
                 </nav>
         
                 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                        <div class="btn-toolbar mb-2 mb-md-0">
-                            <button class="btn btn-sm btn-outline-secondary">
-                                <span data-feather="calendar"></span> Real-Time View
-                            </button>
-                        </div>
-                    </div>
+
+                    <h2>Submit New Request</h2>
+                    <form>
+                      <div class="form-group">
+                        <label for="exampleInputUserID" class="bmd-label-floating">Employee ID</label>
+                        <input type="text" class="form-control" id="exampleInputUserID">
+                        <span class="bmd-help">We'll consider your request only if employee ID included</span>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputName" class="bmd-label-floating">Your Company Email Address</label>
+                        <input type="text" class="form-control" id="exampleInputName">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputNumber" class="bmd-label-floating">Your Company Number / Landline</label>
+                        <input type="text" class="form-control" id="exampleInputNumber">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputDept0" class="bmd-label-floating">Department : </label>
+                        <label for="exampleInputDept" class="bmd-label-floating">Maintenance</label>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleSelect1" class="bmd-label-floating">Request Regarding</label>
+                        <select class="form-control" id="exampleSelect1">
+                          <option>Site</option>
+                          <option>Workshop</option>
+                          <option>Garage</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleSelect1" class="bmd-label-floating">Request For</label>
+                        <select class="form-control" id="exampleSelect1">
+                          <option>Manpower</option>
+                          <option>Purchase Order</option>
+                          <option>IT Issues</option>
+                        </select>
+                        <span class="bmd-help">Manpower=Request goes to HR Department, Purchase Order=Request goes to Accounts, IT Issues=Request goes to IT Support</span>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleTextarea" class="bmd-label-floating">Describe Your Request in Detail</label>
+                        <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputFile" class="bmd-label-floating">Attach a Document</label>
+                        <input type="file" class="form-control-file" id="exampleInputFile">
+                        <small class="text-muted">Only one file can be uploaded. If purchase order, then attach quotation or price details. If manpower, then attach manpower details along with reasons and price. Not mandatory for IT Issues</small>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                          It's very urgent request
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                          It's not very urgent, but we need it quick.
+                        </label>
+                      </div>
+                      <button class="btn btn-default">Cancel</button>
+                      <button type="submit" class="btn btn-primary btn-raised">Submit</button>
+                    </form>
+
+                    <br>
 
 
                 </main>
