@@ -198,6 +198,11 @@
                         <input type="file" class="form-control-file" id="exampleInputFile">
                         <small class="text-muted">Only one file can be uploaded. If purchase order, then attach quotation or price details. If manpower, then attach manpower details along with reasons and price. Not mandatory for IT Needs.</small>
                       </div>
+                      <div class="form-group">
+                        <label for="exampleInputFile2" class="bmd-label-floating">Additional attachment (if any)</label>
+                        <input type="file" class="form-control-file" id="exampleInputFile2">
+                        <small class="text-muted">Only one file can be uploaded. If purchase order, then attach quotation or price details. If manpower, then attach manpower details along with reasons and price. Not mandatory for IT Needs.</small>
+                      </div>
                       <div class="radio">
                         <label>
                           <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
@@ -216,6 +221,73 @@
 
                     <br>
 
+                    <div class="card mb-3">
+                      <div class="card-header">
+                        <i class="fas fa-table"></i>
+                        View Status of Sent Requests</div>
+                      <div class="card-body">
+                        <div class="table-responsive">
+                          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                             <tr>
+                                <th>Request ID</th>
+                                <th>Request Date</th>
+                                <th>Request To</th>
+                                <th>Employee ID</th>
+                                <th>Status</th>
+                                <th>Comment</th>
+                                <th>Details</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>134567</td>
+                                <td>2019/10/13</td>
+                                <td>Accounts</td>
+                                <td>M67890</td>
+                                <td>Approved</td>
+                                <th>Approved ID: A-1000-678911</th>
+                                <td><button type="button" class="btn btn-raised btn-secondary">View</button></td>
+                              </tr>
+                              <tr>
+                                <td>133567</td>
+                                <td>2019/10/14</td>
+                                <td>Accounts</td>
+                                <td>M67890</td>
+                                <td>Under-Process</td>
+                                <th></th>
+                                <td><button type="button" class="btn btn-raised btn-secondary">View</button></td>
+                              </tr>
+                              <tr>
+                                <td>123476</td>
+                                <td>2019/10/11</td>
+                                <td>HR</td>
+                                <td>M56789</td>
+                                <td>On-Hold</td>
+                                <th>Require more details. Already discussed via call.</th>
+                                <td><button type="button" class="btn btn-raised btn-secondary">View</button></td>
+                              </tr>
+                              <tr>
+                                <td>145675</td>
+                                <td>2019/10/11</td>
+                                <td>Accounts</td>
+                                <td>M67890</td>
+                                <td>Rejected</td>
+                                <th>Purchase order expensive. Please attach management approved letter along with quotation as new request and refer this request ID.</th>
+                                <td><button type="button" class="btn btn-raised btn-secondary">View</button></td>
+                              </tr>
+                              <tr>
+                                <td>145878</td>
+                                <td>2019/10/12</td>
+                                <td>IT</td>
+                                <td>M67890</td>
+                                <td>Approved</td>
+                                <th>Approved ID: A-1000-678908</th>
+                                <td><button type="button" class="btn btn-raised btn-secondary">View</button></td>
+                              </tr>
+                            </tbody>
+                        </table>
+                    </div></div></div>
 
                 </main>
             </div>
